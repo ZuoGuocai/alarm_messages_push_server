@@ -1,3 +1,14 @@
+#/usr/bin/env python
+# -*- coding:utf-8 -*-
+#***********************************************************************
+#* Author        : zuoguocai
+#* Email         : zuoguocai@126.com
+#* Create time   : 2018年6月14日20:28:53
+#* Last modified : 2018年6月14日20:28:59
+#* Filename      : push_server.py
+#* Description   : push alarm messages use http get methods via wechat
+#*                 write with python3
+#* *********************************************************************
 from sanic import Sanic
 from sanic import response
 from send_wechat_py3 import *
