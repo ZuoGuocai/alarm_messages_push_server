@@ -7,6 +7,7 @@
 ##  Test Demo
 centos7上python2调用接口测试通过
 
+```
 #!/usr/bin/env python
 #coding=utf-8
 import urllib2
@@ -26,3 +27,4 @@ def notice_push(message):
 my_msg='你知道我对你不仅仅是喜欢,你眼中却没有我想要的答案'
 resp = notice_push(my_msg)
 print(resp)
+```
