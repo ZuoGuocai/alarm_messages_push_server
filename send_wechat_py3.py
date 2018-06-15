@@ -14,6 +14,7 @@ corpid = '你的企业微信corpid'
 corpsecret = '你的企业微信corpsecret'
 url = 'https://qyapi.weixin.qq.com'
 message = ''
+toparty = ''
 
 logging.basicConfig(level=logging.DEBUG, filename='/var/log/wechat.log',
                     format='%(asctime)s - %(levelname)s: %(message)s')
@@ -36,10 +37,11 @@ class Weixin:
             logging.debug('Failed %s' % ( message))
             return 'Failed'
 
-    def messages(self, message):
+    def messages(self,toparty,message):
         values = {
             "touser": touser,
             "msgtype": 'text',
+            "toparty": toparty,
             "agentid": agentid,
             "text": {'content': message},
             "safe": 0
@@ -47,4 +49,6 @@ class Weixin:
         return self.send_message(url, bytes(json.dumps(values), 'utf-8'))
 
 
-
+#if __name__ == '__main__':
+#    obj = Weixin(url, corpid, corpsecret)
+#    ret = obj.messages(message)
